@@ -1,11 +1,11 @@
 import { pokeApi } from "../../../../core/http/pokeApi";
-import type { PokemonListResponse, PokemonItem, PokemonPaginatedList } from "../models/PokemonList";
+import type { APIPokemonListResponse, PokemonItem, PokemonPaginatedList } from "../models/PokemonList";
 
 export const PokemonListService = {
 
     // Async function to get pokemon list
     getPokemonList: async (limit: number = 20, offset: number = 0): Promise<PokemonPaginatedList> => {
-        const response = await pokeApi.get<PokemonListResponse>(`/pokemon?limit=${limit}&offset=${offset}`);
+        const response = await pokeApi.get<APIPokemonListResponse>(`/pokemon?limit=${limit}&offset=${offset}`);
         const rawData = response.data;
 
         // Map raw data to clean PokemonItem format
@@ -25,5 +25,5 @@ export const PokemonListService = {
             count: rawData.count,
             results: cleanData
         };
-    }
+    },
 }

@@ -50,5 +50,19 @@ export const styles = {
   paginationContainer: {
     textAlign: 'center',
     marginTop: '40px'
+  } as CSSProperties,
+
+  filterContainer: {
+    marginBottom: 24,
+    display: 'flex',
+    justifyContent: 'flex-end'
+  } as CSSProperties,
+
+  select: {
+    width: 200
+  } as CSSProperties,
+
+  selectLabel: {
+    textTransform: 'capitalize'
   } as CSSProperties
 };
