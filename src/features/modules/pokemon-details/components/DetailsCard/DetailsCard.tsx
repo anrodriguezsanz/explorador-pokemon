@@ -1,6 +1,9 @@
 import { Card, Col, Row, Typography, Tag, Progress } from 'antd';
 import { usePokemonDetails } from '../../hooks/usePokemonDetails';
-import { cardStyles as styles } from './card.styles';
+import { cardStyles as styles } from './styles.detail';
+import { HeartButton } from '../../../../../shared/components/HeartButton/HeartButton';
+import type { BasePokemon } from '../../../../../shared/models/Pokemon';
+import sharedCons from '../../../../../shared/constants/shared.constants';
 
 const { Title, Text } = Typography;
 
@@ -8,6 +11,14 @@ export const DetailsCard = () => {
     const { pokemon } = usePokemonDetails();
 
     if (!pokemon) return null;
+    
+    // Create BasePokemon object for HeartButton
+    const basePokemon: BasePokemon = {
+        id: pokemon.id,
+        name: pokemon.name,
+        sprite: `${sharedCons.SPRITE_URL}${pokemon.id}.png`
+    };
+    
     return (
         <>
             <Card>
@@ -15,11 +26,14 @@ export const DetailsCard = () => {
                     {/* LEFT COLUMN: IMAGE AND TYPES */}
                     <Col xs={24} md={10} style={styles.imageContainer}>
                         <img src={pokemon.image} alt={pokemon.name} style={styles.image} />
-                        {/* Maps de types array and renders a Tag for each type */}
+                        {/* Maps The types array and renders a Tag for each type */}
                         <div style={styles.typesContainer}>
                             {pokemon.types.map(type => (
                                 <Tag key={type} color="blue" style={styles.typeTag}>{type}</Tag>
                             ))}
+                        </div>
+                        <div style={styles.heartButtonContainer}>
+                            <HeartButton pokemon={basePokemon} large />
                         </div>
                     </Col>
 

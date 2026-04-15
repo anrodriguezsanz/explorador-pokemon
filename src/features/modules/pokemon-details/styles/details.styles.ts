@@ -11,5 +11,10 @@ export const styles = {
   spinnerContainer: {
     textAlign: 'center',
     marginTop: 100
+  } as CSSProperties,
+
+  buttonContainer: {
+    marginTop: 20,
+    textAlign: 'center'
   } as CSSProperties
 };

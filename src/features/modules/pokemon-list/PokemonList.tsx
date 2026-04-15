@@ -1,70 +1,79 @@
-import { List, Pagination, Spin, Select } from 'antd';
+import { Pagination, Spin, Select, Input } from 'antd';
 import { usePokemonList } from './hooks/usePokemonList';
-import { PokemonCard } from './components/PokemonCard/PokemonCard';
+import { PokemonListContainer } from '../../../shared/components/PokemonListContainer/PokemonListContainer';
 import { styles } from './styles/styles.list';
+import { sharedStyles } from '../../../shared/styles/shared.styles';
 import { Navbar } from '../../../shared/components/Navbar/Navbar';
 import { usePokemonTypes } from './hooks/usePokemonType';
+import { NotFoundResult } from '../../../shared/components/NotFoundResult/NotFoundResult';
+import { FavouritesButton } from './components/FavouritesButton/FavouritesButton';
+import listCons from './constants/list.constants';
 
+const { Search } = Input;
 
 export const PokemonList = () => {
+
   const {
     pokemons,
     isLoading,
     totalCount,
     currentPage,
     setCurrentPage,
+    searchQuery,
+    setSearchQuery,
     LIMIT
   } = usePokemonList();
 
   const { types, selectedType, setSelectedType } = usePokemonTypes();
 
+  // Function to reset filters
+  const resetFilters = () => {
+    setSearchQuery('');
+    setSelectedType('');
+  };
+
   return (
     <>
       <Navbar />
-      <div style={styles.container}>
+      <div style={sharedStyles.container}>
+        {/* Filter container */}
         <div style={styles.filterContainer}>
-          {/* Type filter dropdown */}
-          <Select
-            placeholder="Filtrar por tipo..."
-            style={styles.select}
-            value={selectedType || undefined}
-            allowClear={true}
-            onChange={(value) => setSelectedType(value || '')}
-            options={types.map(type => ({
-              label: <span style={styles.selectLabel}>{type}</span>,
-              value: type
-            }))}
-          />
-        </div>
-        {/* Conditional rendering: loading -> spinner, otherwise -> list */}
-        {isLoading ? (
-          <div style={styles.spinnerContainer}>
-            <Spin size="large" />
-          </div>
-        ) : (
-          <>
-            <List
-              bordered={false}
-              style={styles.listContainer}
-              grid={{
-                gutter: 16,
-                column: 5,
-                xs: 1,
-                sm: 2,
-                md: 3,
-                lg: 4,
-                xl: 5,
-              }}
-              dataSource={pokemons}
-              renderItem={(pokemon) => (
-                <List.Item>
-                  <PokemonCard pokemon={pokemon} />
-                </List.Item>
-              )}
+          <FavouritesButton />
+          <div style={styles.filtersGroup}>
+            <Search
+              placeholder={listCons.SEARCH_QUERY_PLACEHOLDER}
+              allowClear
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              style={styles.search}
             />
 
+            <Select
+              placeholder={listCons.FILTER_BY_TYPE_PLACEHOLDER}
+              allowClear
+              style={styles.select}
+              value={selectedType || undefined}
+              onChange={(value) => setSelectedType(value || '')}
+              options={types.map(type => ({
+                label: <span style={styles.selectLabel}>{type}</span>,
+                value: type
+              }))}
+            />
+          </div>
+        </div>
+
+        {/* Conditional rendering: loading -> spinner, no pokemons -> not found message, otherwise -> list */}
+        {isLoading ? (
+          <div style={sharedStyles.spinnerContainer}>
+            <Spin size="large" />
+          </div>
+        ) : !pokemons.length ? (
+          <NotFoundResult onGoBack={resetFilters} />
+        ) : (
+          <>
+            <PokemonListContainer pokemons={pokemons} />
             {/* Pagination bar */}
-            <div style={styles.paginationContainer}>
+            <div style={sharedStyles.paginationContainer}>
               <Pagination
                 current={currentPage}
                 total={totalCount}

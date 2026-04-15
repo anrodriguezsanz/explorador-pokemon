@@ -1,6 +1,7 @@
 import { pokeApi } from '../../../../core/http/pokeApi';
 import type { APITypesList, APIPokemonByType } from '../models/PokemonType';
 import type { PokemonItem, PokemonPaginatedList } from '../models/PokemonList'; 
+import sharedCons from '../../../../shared/constants/shared.constants';
 
 export const PokemonTypeService = {
   
@@ -13,7 +14,6 @@ export const PokemonTypeService = {
   // Fetch all Pokemon of a specific type from the API
   getPokemonByType: async (typeName: string): Promise<PokemonPaginatedList> => {
     const response = await pokeApi.get<APIPokemonByType>(`/type/${typeName}`);
-    
     const rawPokemonList = response.data.pokemon;
 
     // Returns an array of PokemonItem objects with id, name and sprite
@@ -24,7 +24,7 @@ export const PokemonTypeService = {
       return {
         id: pokemonId,
         name: pokemonData.name,
-        sprite: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonId}.png`
+        sprite: `${sharedCons.SPRITE_URL}${pokemonId}.png`
       };
     });
 

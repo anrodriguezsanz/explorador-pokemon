@@ -1,3 +1,4 @@
+// Interface for the API response
 export interface ApiPokemonDetail {
   id: number;
   name: string;
@@ -6,7 +7,7 @@ export interface ApiPokemonDetail {
   sprites: {
     other: {
       'official-artwork': {
-        front_default: string;
+        front_default: string; 
       };
     };
   };
@@ -19,6 +20,7 @@ export interface ApiPokemonDetail {
   }>;
 }
 
+// Interface for the cleaned up data
 export interface PokemonDetails {
   id: number;
   name: string;

@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useAtom } from 'jotai';
-import { selectedTypeAtom } from '../utils/pokemon.store';
+import { selectedTypeAtom } from '../../../../shared/utils/pokemon.store';
 import { PokemonTypeService } from '../services/PokemonTypeService';
+import listCons from '../constants/list.constants';
 
 export const usePokemonTypes = () => {
     const [types, setTypes] = useState<string[]>([]);
@@ -18,7 +19,7 @@ export const usePokemonTypes = () => {
             const types = await PokemonTypeService.getTypes();
             setTypes(types);
         } catch (error) {
-            console.error("Error cargando los tipos:", error);
+            console.error(listCons.ERROR_LOADING_TYPES, error);
         }
     };
 

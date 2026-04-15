@@ -1,14 +1,13 @@
-import { Button, Spin, Result } from 'antd';
-import { useNavigate } from 'react-router-dom';
+import { Spin } from 'antd';
 import { usePokemonDetails } from '../pokemon-details/hooks/usePokemonDetails';
 import { styles } from './styles/details.styles';
-import { sharedStyles } from '../../../shared/styles/styles';
 import { Navbar } from '../../../shared/components/Navbar/Navbar';
 import { DetailsCard } from './components/DetailsCard/DetailsCard';
+import { NotFoundResult } from '../../../shared/components/NotFoundResult/NotFoundResult';
+import { GoBackButton } from '../../../shared/components/GoBackButton/GoBackButton';
 
 export const PokemonDetails = () => {
   const { pokemon, isLoading } = usePokemonDetails();
-  const navigate = useNavigate();
 
   return (
     <>
@@ -20,26 +19,13 @@ export const PokemonDetails = () => {
             <Spin size="large" />
           </div>
         ) : !pokemon ? (
-          <Result
-            status="404"
-            title="Pokémon no encontrado"
-            subTitle="Lo sentimos, el Pokémon que buscas no existe."
-            extra={
-              <Button
-                onClick={() => navigate('/')}
-                style={sharedStyles.backButton}>
-                Volver al listado
-              </Button>
-            }
-          />
+          <NotFoundResult />
         ) : (
           <>
             <DetailsCard />
-            <Button
-              onClick={() => navigate('/')}
-              style={sharedStyles.backButton}>
-              Volver al listado
-            </Button>
+            <div style={styles.buttonContainer}>
+              <GoBackButton />
+            </div>
           </>
         )}
       </div>

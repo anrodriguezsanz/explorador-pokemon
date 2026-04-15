@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { PokemonDetailsService } from '../services/PokemonDetailsService';
 import type { PokemonDetails } from '../models/PokemonDetails';
+import detailCons from '../constants/constants.detail';
 
 export const usePokemonDetails = () => {
     const { id } = useParams<{ id: string }>();
@@ -23,7 +24,7 @@ export const usePokemonDetails = () => {
             const data = await PokemonDetailsService.getPokemonById(parseInt(pokemonId));
             setPokemon(data);
         } catch (error) {
-            console.error("Error cargando el detalle:", error);
+            console.error(detailCons.ERROR_LOADING_DETAIL, error);
         } finally {
             setIsLoading(false);
         }

@@ -1,3 +1,5 @@
+import type { BasePokemon } from '../../../../shared/models/Pokemon';
+
 // --- POKEMON ---
 
 // Pokemon List API response
@@ -14,12 +16,9 @@ export interface APIPokemonListItem {
   url: string;
 }
 
-// Each Pokemon object in the app
-export interface PokemonItem {
-    id: number;
-    name: string;
-    sprite: string;
-} 
+// Each Pokemon item in the list (inherits id, name and sprite)
+export interface PokemonItem extends BasePokemon {
+}  
 
 // Paginated list in the app
 export interface PokemonPaginatedList {

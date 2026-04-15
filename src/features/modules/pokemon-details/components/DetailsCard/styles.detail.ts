@@ -1,6 +1,12 @@
 import type { CSSProperties } from 'react';
 
 export const cardStyles = {
+  heartButtonContainer: {
+    marginTop: 24,
+    display: 'flex',
+    justifyContent: 'center'
+  } as CSSProperties,
+
   imageContainer: {
     textAlign: 'center'
   } as CSSProperties,
@@ -11,7 +17,10 @@ export const cardStyles = {
   } as CSSProperties,
 
   typesContainer: {
-    marginTop: 20
+    marginTop: 20,
+    display: 'flex',
+    justifyContent: 'center',
+    gap: 10
   } as CSSProperties,
 
   typeTag: {

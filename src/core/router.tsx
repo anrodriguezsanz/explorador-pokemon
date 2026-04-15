@@ -1,16 +1,17 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import { PokemonList } from '../features/modules/pokemon-list/PokemonList';
-import { PokemonDetails } from '../features/modules/pokemon-details/PokemonDetails';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { PokemonListPage } from '../features/pages/pokemon-list';
+import { PokemonDetailPage } from '../features/pages/pokemon-detail';
+import { FavouritesPage } from '../features/pages/favourites';
 
 export const AppRouter = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<PokemonList />} />
+        <Route path="/" element={<PokemonListPage />} />
 
-        <Route path="/pokemon/:id" element={<PokemonDetails />} />
+        <Route path="/pokemon/:id" element={<PokemonDetailPage />} />
 
-        <Route path="*" element={<Navigate to="/" replace />} />
+        <Route path="/favourites" element={<FavouritesPage />} />
       </Routes>
     </BrowserRouter>
   );

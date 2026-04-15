@@ -13,5 +13,11 @@ export const styles = {
 
   titleSpan: {
     textTransform: 'capitalize'
+  } as CSSProperties,
+
+  favoriteContainer: {
+    display: 'flex',
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
   } as CSSProperties
 };
