@@ -4,6 +4,7 @@ import { useAtom } from "jotai";
 import { useNavigate } from "react-router-dom";
 import { currentPageAtom } from "../../utils/pokemon.store";
 import { usePokemonList } from "../../../features/modules/pokemon-list/hooks/usePokemonList";
+import sharedCons from "../../constants/shared.constants";
 
 const { Title } = Typography;
 
@@ -14,7 +15,7 @@ export const Navbar = () => {
 
     // Reset all filters and navigate to home
     const handleGoHome = () => {
-        navigate('/');
+        navigate(sharedCons.HOME_PATH); 
         setCurrentPage(1);
         resetFilters();
     };

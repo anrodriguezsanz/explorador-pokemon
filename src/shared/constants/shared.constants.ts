@@ -5,6 +5,10 @@ const sharedCons = {
   NOT_FOUND_STATUS: '404' as const,
   NOT_FOUND_TITLE: 'Pokémon no encontrado',
   NOT_FOUND_SUBTITLE: 'El Pokémon que buscas no existe.',
+  GO_BACK_TO_LIST: 'Volver al listado',
+  GO_BACK_TO_FAVOURITES: 'Volver a Favoritos',
+  FAVOURITES_PATH: '/favourites',
+  HOME_PATH: '/'
 }
 
 export default sharedCons;

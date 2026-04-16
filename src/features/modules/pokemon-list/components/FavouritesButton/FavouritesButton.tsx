@@ -4,6 +4,7 @@ import { styles } from "./styles.favourites.button";
 import { useNavigate } from "react-router-dom";
 import { useAtom } from "jotai";
 import { favouritesPageAtom } from "../../../../../shared/utils/pokemon.store";
+import sharedCons from "../../../../../shared/constants/shared.constants";
 
 export const FavouritesButton = () => {
     const navigate = useNavigate();
@@ -11,7 +12,7 @@ export const FavouritesButton = () => {
 
     const handleFavouritesClick = () => {
         setCurrentPage(1);
-        navigate('/favourites');
+        navigate(sharedCons.FAVOURITES_PATH);
     };
 
     return (

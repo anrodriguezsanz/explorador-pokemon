@@ -1,6 +1,7 @@
 import { Button } from "antd";
 import { useNavigate, useLocation } from "react-router-dom";
 import { styles } from "./styles.back.button";
+import sharedCons from "../../constants/shared.constants";
 
 interface GoBackButtonProps {
     onGoBack?: () => void;
@@ -11,12 +12,12 @@ export const GoBackButton = ({ onGoBack }: GoBackButtonProps) => {
     const location = useLocation();
     
     // Check if user came from favourites
-    const fromFavourites = location.state?.from === '/favourites';
+    const fromFavourites = location.state?.from === sharedCons.FAVOURITES_PATH;
 
     // Navigate back to the origin (list or favourites)
     const handleGoBack = () => {
         onGoBack?.();
-        navigate(fromFavourites ? '/favourites' : '/');
+        navigate(fromFavourites ? sharedCons.FAVOURITES_PATH : sharedCons.HOME_PATH);
     };
 
     return (
@@ -26,7 +27,7 @@ export const GoBackButton = ({ onGoBack }: GoBackButtonProps) => {
             size="large"
             onClick={handleGoBack}
             style={styles.button}>
-            {fromFavourites ? "Volver a Favoritos" : "Volver al listado"}
+            {fromFavourites ? sharedCons.GO_BACK_TO_FAVOURITES : sharedCons.GO_BACK_TO_LIST}
         </Button>
     );
 };
