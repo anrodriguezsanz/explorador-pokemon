@@ -8,7 +8,9 @@ const sharedCons = {
   GO_BACK_TO_LIST: 'Volver al listado',
   GO_BACK_TO_FAVOURITES: 'Volver a Favoritos',
   FAVOURITES_PATH: '/favourites',
-  HOME_PATH: '/'
+  HOME_PATH: '/',
+  POKEMON_PATH: '/pokemon',
+  NO_SPRITE_AVAILABLE: 'No hay sprites disponibles para este Pokémon'
 }
 
 export default sharedCons;

@@ -42,5 +42,15 @@ export const cardStyles = {
   statName: {
     textTransform: 'uppercase',
     fontSize: '12px'
+  } as CSSProperties,
+
+  noImageSpan: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '100%',
+    margin: '20px 70px 0 30px',
+    fontWeight: 'bold',
+    color: '#3760A7'
   } as CSSProperties
 };

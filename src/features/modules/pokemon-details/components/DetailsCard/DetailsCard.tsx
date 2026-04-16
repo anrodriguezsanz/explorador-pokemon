@@ -2,6 +2,9 @@ import { Card, Col, Row, Typography, Tag, Progress } from 'antd';
 import { usePokemonDetails } from '../../hooks/usePokemonDetails';
 import { cardStyles as styles } from './styles.detail';
 import { HeartButton } from '../../../../../shared/components/HeartButton/HeartButton';
+import { CryButton } from '../CryButton/CryButton';
+import { useState } from 'react';
+import detailCons from '../../constants/constants.detail';
 import type { BasePokemon } from '../../../../../shared/models/Pokemon';
 import sharedCons from '../../../../../shared/constants/shared.constants';
 
@@ -9,29 +12,42 @@ const { Title, Text } = Typography;
 
 export const DetailsCard = () => {
     const { pokemon } = usePokemonDetails();
+    const [imageError, setImageError] = useState(false);
 
     if (!pokemon) return null;
-    
+
     // Create BasePokemon object for HeartButton
     const basePokemon: BasePokemon = {
         id: pokemon.id,
         name: pokemon.name,
         sprite: `${sharedCons.SPRITE_URL}${pokemon.id}.png`
     };
-    
+
     return (
         <>
             <Card>
                 <Row gutter={[32, 32]} align="middle">
                     {/* LEFT COLUMN: IMAGE AND TYPES */}
                     <Col xs={24} md={10} style={styles.imageContainer}>
-                        <img src={pokemon.image} alt={pokemon.name} style={styles.image} />
+                        {!pokemon.image || imageError ? (
+                            <div style={styles.noImageSpan}>
+                                <span>{detailCons.NO_IMAGE_AVAILABLE}</span>
+                            </div>
+                        ) : (
+                            <img 
+                                src={pokemon.image} 
+                                alt={pokemon.name} 
+                                style={styles.image} 
+                                onError={() => setImageError(true)} 
+                            />
+                        )}
                         {/* Maps The types array and renders a Tag for each type */}
                         <div style={styles.typesContainer}>
                             {pokemon.types.map(type => (
                                 <Tag key={type} color="blue" style={styles.typeTag}>{type}</Tag>
                             ))}
                         </div>
+                        <CryButton pokemonId={pokemon.id} />
                         <div style={styles.heartButtonContainer}>
                             <HeartButton pokemon={basePokemon} large />
                         </div>

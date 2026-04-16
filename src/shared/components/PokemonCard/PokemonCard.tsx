@@ -1,8 +1,10 @@
+import { useState } from 'react';
 import type { PokemonItem } from '../../../features/modules/pokemon-list/models/PokemonList';
 import { Card } from 'antd';
 import { styles } from './styles.card';
 import { Link } from 'react-router-dom';
 import { HeartButton } from '../HeartButton/HeartButton';
+import sharedCons from '../../constants/shared.constants';
 
 const { Meta } = Card;
 
@@ -12,10 +14,11 @@ interface PokemonCardProps {
 }
 
 export const PokemonCard = ({ pokemon, from }: PokemonCardProps) => {
+  const [imageError, setImageError] = useState(false);
   
   return (
     <>
-      <Link to={`/pokemon/${pokemon.id}`} state={{ from }}>
+      <Link to={`${sharedCons.POKEMON_PATH}/${pokemon.id}`} state={{ from }}>
         <Card
           hoverable
           cover={
@@ -23,11 +26,19 @@ export const PokemonCard = ({ pokemon, from }: PokemonCardProps) => {
               <div style={styles.favoriteContainer}>
                 <HeartButton pokemon={pokemon} />
               </div>
-              <img
-                alt={pokemon.name}
-                src={pokemon.sprite}
-                style={styles.image}
-              />
+              {/* Check if sprite is available. If not, renders a message */}
+              {pokemon.sprite === '' || imageError ? (
+                <div style={styles.noSpriteSpan}>
+                  <span>{sharedCons.NO_SPRITE_AVAILABLE}</span>
+                </div>
+              ) : (
+                <img
+                  alt={pokemon.name}
+                  src={pokemon.sprite}
+                  style={styles.image}
+                  onError={() => setImageError(true)}
+                />
+              )}
             </div>
           }
         >
