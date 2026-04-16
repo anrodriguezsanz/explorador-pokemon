@@ -1,9 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { PokemonListService } from '../services/PokemonListService';
 import type { PokemonItem } from '../models/PokemonList';
 import sharedCons from '../../../../shared/constants/shared.constants';
-import { useAtom, useAtomValue } from 'jotai';
-import { selectedTypeAtom, searchQueryAtom } from '../../../../shared/utils/pokemon.store';
+import { useAtom } from 'jotai';
+import { selectedTypeAtom, searchQueryAtom, currentPageAtom } from '../../../../shared/utils/pokemon.store';
 import { PokemonTypeService } from '../services/PokemonTypeService';
 import listCons from '../constants/list.constants';
 
@@ -14,11 +14,16 @@ export const usePokemonList = () => {
     const [pokemons, setPokemons] = useState<PokemonItem[]>([]);
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const [totalCount, setTotalCount] = useState<number>(0);
-    const [currentPage, setCurrentPage] = useState<number>(1);
     const [debouncedSearchQuery, setDebouncedSearchQuery] = useState<string>('');
 
     const [searchQuery, setSearchQuery] = useAtom(searchQueryAtom);
-    const selectedType = useAtomValue(selectedTypeAtom);
+    const [currentPage, setCurrentPage] = useAtom(currentPageAtom);
+    const [selectedType, setSelectedType] = useAtom(selectedTypeAtom);
+
+
+    // --- REF HOOK
+    // Track previous filter values to detect actual changes
+    const prevFiltersRef = useRef({ selectedType, debouncedSearchQuery });
 
 
     // --- EFFECT HOOKS ---
@@ -32,9 +37,14 @@ export const usePokemonList = () => {
         return () => clearTimeout(timer);
     }, [searchQuery]);
 
-    // Reset page when type or search query change
+    // If filters actually change, reset page to 1. If not, keep the current page
     useEffect(() => {
-        setCurrentPage(1);
+        const prevFilters = prevFiltersRef.current;
+
+        if (prevFilters.selectedType !== selectedType || prevFilters.debouncedSearchQuery !== debouncedSearchQuery) {
+            setCurrentPage(1);
+            prevFiltersRef.current = { selectedType, debouncedSearchQuery };
+        }
     }, [selectedType, debouncedSearchQuery]);
 
     // Fetch pokemons when page, type, or search query changes
@@ -44,6 +54,12 @@ export const usePokemonList = () => {
 
 
     // --- ACTIONS ---
+
+    // Function to reset filters
+    const resetFilters = () => {
+        setSearchQuery('');
+        setSelectedType('');
+    };
 
     // Helper function to paginate results
     const paginateResults = (results: PokemonItem[], offset: number) => {
@@ -58,25 +74,24 @@ export const usePokemonList = () => {
         const offset = (page - 1) * sharedCons.LIMIT;
 
         try {
+            let results: PokemonItem[] = [];
+            // If a type is selected, get Pokemon by type. If not, get all Pokemon
             if (selectedType !== '') {
-                // If a type is selected, get pokemons by type
                 const pokemonsByType = await PokemonTypeService.getPokemonByType(selectedType);
-                setTotalCount(pokemonsByType.count);
-                setPokemons(paginateResults(pokemonsByType.results, offset));
-            } else if (debouncedSearchQuery !== '') {
-                // If a search query is provided, get all pokemons and filter by name
+                results = pokemonsByType.results;
+            } else {
                 const allPokemons = await PokemonListService.getPokemonList(sharedCons.TOTAL_POKEMON, 0);
-                const filteredPokemons = allPokemons.results.filter(pokemon =>
+                results = allPokemons.results;
+            }
+            // Apply search filter on top of type filter
+            if (debouncedSearchQuery !== '') {
+                results = results.filter(pokemon =>
                     pokemon.name.toLowerCase().includes(debouncedSearchQuery.toLowerCase())
                 );
-                setTotalCount(filteredPokemons.length);
-                setPokemons(paginateResults(filteredPokemons, offset));
-            } else {
-                // If no type or search query is provided, get all pokemons
-                const allPokemons = await PokemonListService.getPokemonList(sharedCons.LIMIT, offset);
-                setTotalCount(allPokemons.count);
-                setPokemons(allPokemons.results);
             }
+            // Update total count and paginate results
+            setTotalCount(results.length);
+            setPokemons(paginateResults(results, offset));
         } catch (error) {
             console.error(listCons.ERROR_FETCHING_POKEMONS, error);
         } finally {
@@ -92,6 +107,7 @@ export const usePokemonList = () => {
         setCurrentPage,
         searchQuery,
         setSearchQuery,
+        resetFilters,
         LIMIT: sharedCons.LIMIT
     };
 };

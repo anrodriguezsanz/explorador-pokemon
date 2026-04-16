@@ -1,12 +1,11 @@
 import { useAtom } from 'jotai';
-import { favouritesAtom } from '../utils/pokemon.store';
+import { favouritesAtom, favouritesPageAtom } from '../utils/pokemon.store';
 import type { BasePokemon } from '../models/Pokemon';
-import { useState } from 'react';
 import sharedCons from '../constants/shared.constants';
 
 export const usePokemonFavourites = () => {
 
-    const [currentPage, setCurrentPage] = useState<number>(1);
+    const [currentPage, setCurrentPage] = useAtom(favouritesPageAtom);
     const [favourites, setFavourites] = useAtom(favouritesAtom);
 
     // Check if a pokemon is in favourites

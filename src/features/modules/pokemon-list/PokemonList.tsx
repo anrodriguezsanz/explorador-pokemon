@@ -21,16 +21,11 @@ export const PokemonList = () => {
     setCurrentPage,
     searchQuery,
     setSearchQuery,
+    resetFilters,
     LIMIT
   } = usePokemonList();
 
   const { types, selectedType, setSelectedType } = usePokemonTypes();
-
-  // Function to reset filters
-  const resetFilters = () => {
-    setSearchQuery('');
-    setSelectedType('');
-  };
 
   return (
     <>

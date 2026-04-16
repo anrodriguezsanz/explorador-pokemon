@@ -5,13 +5,14 @@ import type { PokemonItem } from "../../../features/modules/pokemon-list/models/
 
 interface PokemonListContainerProps {
     pokemons: PokemonItem[];
+    from?: string;
 }
 
-export const PokemonListContainer = ({ pokemons }: PokemonListContainerProps) => {
+export const PokemonListContainer = ({ pokemons, from }: PokemonListContainerProps) => {
     return (
         <Row gutter={[16, 16]} style={sharedStyles.listContainer}>
             {pokemons.map((pokemon) => (
-                <Col 
+                <Col
                     key={pokemon.id}
                     xs={24}
                     sm={12}
@@ -20,7 +21,7 @@ export const PokemonListContainer = ({ pokemons }: PokemonListContainerProps) =>
                     xl={6}
                     xxl={6}
                 >
-                    <PokemonCard pokemon={pokemon} />
+                    <PokemonCard pokemon={pokemon} from={from} />
                 </Col>
             ))}
         </Row>

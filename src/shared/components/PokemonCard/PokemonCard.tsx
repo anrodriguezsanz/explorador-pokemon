@@ -6,11 +6,16 @@ import { HeartButton } from '../HeartButton/HeartButton';
 
 const { Meta } = Card;
 
-export const PokemonCard = ({ pokemon }: { pokemon: PokemonItem }) => {
+interface PokemonCardProps {
+  pokemon: PokemonItem;
+  from?: string;
+}
+
+export const PokemonCard = ({ pokemon, from }: PokemonCardProps) => {
   
   return (
     <>
-      <Link to={`/pokemon/${pokemon.id}`}>
+      <Link to={`/pokemon/${pokemon.id}`} state={{ from }}>
         <Card
           hoverable
           cover={

@@ -31,7 +31,7 @@ export const PokemonFavourites = () => {
                         />
                     </div>
                 ) : (
-                    <PokemonListContainer pokemons={favourites} />
+                    <PokemonListContainer pokemons={favourites} from="/favourites" />
                 )}
                 <div style={sharedStyles.paginationContainer}>
                     <Pagination
