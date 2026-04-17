@@ -1,4 +1,4 @@
-import { Pagination, Typography, Badge } from 'antd';
+import { Pagination, Typography } from 'antd';
 import { sharedStyles } from '../../../shared/styles/shared.styles';
 import { styles } from './styles.favourites';
 import { Navbar } from '../../../shared/components/Navbar/Navbar';
