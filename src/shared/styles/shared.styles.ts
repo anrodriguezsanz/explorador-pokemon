@@ -5,7 +5,7 @@ export const sharedStyles = {
     padding: '40px',
     maxWidth: '1200px',
     width: '100%',
-    margin: '140px auto 0 auto'
+    margin: '20px auto 0 auto'
   } as CSSProperties,
 
   listContainer: {

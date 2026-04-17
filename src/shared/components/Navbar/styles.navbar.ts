@@ -5,13 +5,8 @@ export const styles = {
     background: 'linear-gradient(135deg, #3760A7 0%, #5B8FD8 100%)',
     borderBottom: '1px solid #e8e8e8',
     padding: '0',
-    position: 'fixed',
-    top: 0,
-    left: 0,
-    right: 0,
-    zIndex: 1000,
     boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',
-    width: '100vw'
+    width: '100%'
   } as CSSProperties,
 
   navbarContent: {

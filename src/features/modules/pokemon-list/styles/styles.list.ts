@@ -2,7 +2,7 @@ import type { CSSProperties } from 'react';
 
 export const styles = {
   filterContainer: {
-    marginBottom: 24,
+    margin: '20px auto 36px auto',
     display: 'flex',
     justifyContent: 'space-between',
     gap: '16px',

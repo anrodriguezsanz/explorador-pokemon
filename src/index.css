@@ -107,3 +107,10 @@ code {
   padding: 4px 8px;
   background: var(--code-bg);
 }
+
+/* Custom hover effect for Pokemon cards */
+.ant-card-hoverable:hover {
+  box-shadow: 0 8px 24px rgba(7, 58, 109, 0.4) !important;
+  transform: translateY(-4px);
+  transition: all 0.3s ease;
+}

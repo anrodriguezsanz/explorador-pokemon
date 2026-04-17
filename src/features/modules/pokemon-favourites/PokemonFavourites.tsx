@@ -1,4 +1,4 @@
-import { Pagination, Typography } from 'antd';
+import { Pagination, Typography, Badge } from 'antd';
 import { sharedStyles } from '../../../shared/styles/shared.styles';
 import { styles } from './styles.favourites';
 import { Navbar } from '../../../shared/components/Navbar/Navbar';
@@ -17,9 +17,13 @@ export const PokemonFavourites = () => {
         <>
             <Navbar />
             <div style={sharedStyles.container}>
-                <div style={styles.buttonContainer}>
-                    <Title level={1} style={styles.title}>Favoritos</Title>
+                <div style={styles.headerContainer}>
                     <GoBackButton />
+                    <div style={styles.titleContainer}>
+                        <Title level={1} style={styles.title}>
+                            Favoritos
+                        </Title>
+                    </div>
                 </div>
                 {!favourites.length ? (
                     <div style={styles.emptyStateContainer}>

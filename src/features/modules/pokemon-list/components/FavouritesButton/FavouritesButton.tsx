@@ -1,5 +1,5 @@
 import { Button } from "antd";
-import { HeartOutlined } from "@ant-design/icons";
+import { HeartFilled } from "@ant-design/icons";
 import { styles } from "./styles.favourites.button";
 import { useNavigate } from "react-router-dom";
 import { useAtom } from "jotai";
@@ -20,7 +20,7 @@ export const FavouritesButton = () => {
             type="primary" 
             variant="solid" 
             size="large" 
-            icon={<HeartOutlined />}
+            icon={<HeartFilled />}
             style={styles.button}
             onClick={handleFavouritesClick}>
             Favoritos
