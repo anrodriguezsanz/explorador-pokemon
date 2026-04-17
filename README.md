@@ -9,6 +9,7 @@ Aplicación web para explorar la [PokéAPI](https://pokeapi.co/). Construida con
 - **Búsqueda por nombre** 
 - **Filtrado por tipo** 
 - **Gestión de favoritos** 
+- **Reproducción de cry del Pokémon** 
 - **Paginación** 
 - **Diseño responsive** 
 
@@ -20,7 +21,7 @@ Aplicación web para explorar la [PokéAPI](https://pokeapi.co/). Construida con
 - **TypeScript 6**
 - **Vite 8**
 - **Ant Design 6**
-- **React Router 7**
+- **React Router DOM 7**
 - **Jotai 2**
 - **Axios 1**
 - **PokéAPI**
@@ -41,6 +42,7 @@ Aplicación web para explorar la [PokéAPI](https://pokeapi.co/). Construida con
 - Información básica (altura, peso)
 - Tipos del Pokémon
 - Estadísticas base con barras de progreso
+- Botón para reproducir el cry del Pokémon
 - Botón para añadir/quitar de favoritos
 
 ### Favoritos
