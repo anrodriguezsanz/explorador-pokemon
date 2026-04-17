@@ -1,0 +1,56 @@
+{
+  "navbar": {
+    "title": "Poképedia"
+  },
+  "list": {
+    "searchPlaceholder": "Search by name...",
+    "filterByType": "Filter by type",
+    "favourites": "Favourites",
+    "notFound": "Pokémon not found",
+    "notFoundSubtitle": "The Pokémon you are looking for does not exist"
+  },
+  "favourites": {
+    "title": "Favourites",
+    "empty": "You have no favourite Pokémon"
+  },
+  "details": {
+    "height": "Height",
+    "weight": "Weight",
+    "stats": "Stats",
+    "noImage": "Image not available",
+    "goBack": "Go Back",
+    "listenToCry": "Listen to cry",
+    "playing": "Playing..."
+  },
+  "stats": {
+    "hp": "HP",
+    "attack": "Attack",
+    "defense": "Defense",
+    "special-attack": "Special Attack",
+    "special-defense": "Special Defense",
+    "speed": "Speed"
+  },
+  "common": {
+    "noSprite": "No sprites available for this Pokémon"
+  },
+  "types": {
+    "normal": "Normal",
+    "fighting": "Fighting",
+    "flying": "Flying",
+    "poison": "Poison",
+    "ground": "Ground",
+    "rock": "Rock",
+    "bug": "Bug",
+    "ghost": "Ghost",
+    "steel": "Steel",
+    "fire": "Fire",
+    "water": "Water",
+    "grass": "Grass",
+    "electric": "Electric",
+    "psychic": "Psychic",
+    "ice": "Ice",
+    "dragon": "Dragon",
+    "dark": "Dark",
+    "fairy": "Fairy"
+  }
+}

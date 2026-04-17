@@ -1,4 +1,5 @@
 import { Pagination, Spin, Select, Input } from 'antd';
+import { useTranslation } from 'react-i18next';
 import { usePokemonList } from './hooks/usePokemonList';
 import { PokemonListContainer } from '../../../shared/components/PokemonListContainer/PokemonListContainer';
 import { styles } from './styles/styles.list';
@@ -7,11 +8,11 @@ import { Navbar } from '../../../shared/components/Navbar/Navbar';
 import { usePokemonTypes } from './hooks/usePokemonType';
 import { NotFoundResult } from '../../../shared/components/NotFoundResult/NotFoundResult';
 import { FavouritesButton } from './components/FavouritesButton/FavouritesButton';
-import listCons from './constants/list.constants';
 
 const { Search } = Input;
 
 export const PokemonList = () => {
+  const { t } = useTranslation();
 
   const {
     pokemons,
@@ -36,7 +37,7 @@ export const PokemonList = () => {
           <FavouritesButton />
           <div style={styles.filtersGroup}>
             <Search
-              placeholder={listCons.SEARCH_QUERY_PLACEHOLDER}
+              placeholder={t('list.searchPlaceholder')}
               allowClear
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
@@ -44,13 +45,13 @@ export const PokemonList = () => {
             />
 
             <Select
-              placeholder={listCons.FILTER_BY_TYPE_PLACEHOLDER}
+              placeholder={t('list.filterByType')}
               allowClear
               style={styles.select}
               value={selectedType || undefined}
               onChange={(value) => setSelectedType(value || '')}
               options={types.map(type => ({
-                label: <span style={styles.selectLabel}>{type}</span>,
+                label: <span style={styles.selectLabel}>{t(`types.${type}`)}</span>,
                 value: type
               }))}
             />

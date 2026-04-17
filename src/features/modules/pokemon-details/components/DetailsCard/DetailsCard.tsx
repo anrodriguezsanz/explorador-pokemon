@@ -1,16 +1,17 @@
 import { Card, Col, Row, Typography, Tag, Progress } from 'antd';
+import { useTranslation } from 'react-i18next';
 import { usePokemonDetails } from '../../hooks/usePokemonDetails';
 import { cardStyles as styles } from './styles.detail';
 import { HeartButton } from '../../../../../shared/components/HeartButton/HeartButton';
 import { CryButton } from '../CryButton/CryButton';
 import { useState } from 'react';
-import detailCons from '../../constants/constants.detail';
 import type { BasePokemon } from '../../../../../shared/models/Pokemon';
 import sharedCons from '../../../../../shared/constants/shared.constants';
 
 const { Title, Text } = Typography;
 
 export const DetailsCard = () => {
+    const { t } = useTranslation();
     const { pokemon } = usePokemonDetails();
     const [imageError, setImageError] = useState(false);
 
@@ -31,7 +32,7 @@ export const DetailsCard = () => {
                     <Col xs={24} md={10} style={styles.imageContainer}>
                         {!pokemon.image || imageError ? (
                             <div style={styles.noImageSpan}>
-                                <span>{detailCons.NO_IMAGE_AVAILABLE}</span>
+                                <span>{t('details.noImage')}</span>
                             </div>
                         ) : (
                             <img 
@@ -44,7 +45,7 @@ export const DetailsCard = () => {
                         {/* Maps The types array and renders a Tag for each type */}
                         <div style={styles.typesContainer}>
                             {pokemon.types.map(type => (
-                                <Tag key={type} color="blue" style={styles.typeTag}>{type}</Tag>
+                                <Tag key={type} color="blue" style={styles.typeTag}>{t(`types.${type}`)}</Tag>
                             ))}
                         </div>
                         <CryButton pokemonId={pokemon.id} />
@@ -59,15 +60,15 @@ export const DetailsCard = () => {
 
                         {/* Displays height and weight converted to meters and kilograms */}
                         <Row style={styles.infoRow}>
-                            <Col span={12}><Text strong>Altura:</Text> {pokemon.height / 10} m</Col>
-                            <Col span={12}><Text strong>Peso:</Text> {pokemon.weight / 10} kg</Col>
+                            <Col span={12}><Text strong>{t('details.height')}:</Text> {pokemon.height / 10} m</Col>
+                            <Col span={12}><Text strong>{t('details.weight')}:</Text> {pokemon.weight / 10} kg</Col>
                         </Row>
 
-                        <Title level={4}>Stats</Title>
+                        <Title level={4}>{t('details.stats')}</Title>
                         {/* Maps the stats array and renders a progress bar for each */}
                         {pokemon.stats.map(stat => (
                             <div key={stat.name} style={styles.statContainer}>
-                                <Text style={styles.statName}>{stat.name}</Text>
+                                <Text style={styles.statName}>{t(`stats.${stat.name}`)}</Text>
                                 <Progress
                                     percent={stat.value}
                                     success={{ percent: 0 }}

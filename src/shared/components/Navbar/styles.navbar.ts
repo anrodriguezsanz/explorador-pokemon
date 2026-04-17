@@ -15,7 +15,17 @@ export const styles = {
     padding: '32px 40px',
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'space-between'
+  } as CSSProperties,
+
+  leftSpacer: {
+    flex: 1
+  } as CSSProperties,
+
+  rightContainer: {
+    flex: 1,
+    display: 'flex',
+    justifyContent: 'flex-end'
   } as CSSProperties,
 
   title: {
@@ -27,6 +37,8 @@ export const styles = {
     letterSpacing: '3px',
     textTransform: 'uppercase',
     textShadow: '2px 2px 4px rgba(0, 0, 0, 0.3), 0 0 10px rgba(255, 255, 255, 0.2)',
-    cursor: 'pointer'
+    cursor: 'pointer',
+    flex: 2,
+    textAlign: 'center'
   } as CSSProperties
 };

@@ -1,7 +1,7 @@
 import { Button } from "antd";
 import { SoundOutlined, PauseOutlined } from "@ant-design/icons";
+import { useTranslation } from "react-i18next";
 import { styles } from "./styles.cry.button";
-import constants from "../../constants/constants.detail";
 import { usePokemonCry } from "../../hooks/usePokemonCry";
 
 interface CryButtonProps {
@@ -9,7 +9,7 @@ interface CryButtonProps {
 }
 
 export const CryButton = ({ pokemonId }: CryButtonProps) => {
-
+    const { t } = useTranslation();
     const { isPlaying, playCry } = usePokemonCry(pokemonId);
 
     return (
@@ -17,7 +17,7 @@ export const CryButton = ({ pokemonId }: CryButtonProps) => {
             icon={isPlaying ? <PauseOutlined /> : <SoundOutlined />}
             onClick={playCry}
             loading={isPlaying}>
-            {isPlaying ? constants.PLAYING : constants.LISTEN_TO_CRY}
+            {isPlaying ? t('details.playing') : t('details.listenToCry')}
         </Button>
     );
 };

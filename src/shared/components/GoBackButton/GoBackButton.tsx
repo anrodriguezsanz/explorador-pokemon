@@ -1,4 +1,5 @@
 import { Button } from "antd";
+import { useTranslation } from "react-i18next";
 import { useNavigate, useLocation } from "react-router-dom";
 import { styles } from "./styles.back.button";
 import sharedCons from "../../constants/shared.constants";
@@ -8,6 +9,7 @@ interface GoBackButtonProps {
 }
 
 export const GoBackButton = ({ onGoBack }: GoBackButtonProps) => {
+    const { t } = useTranslation();
     const navigate = useNavigate();
     const location = useLocation();
     
@@ -27,7 +29,7 @@ export const GoBackButton = ({ onGoBack }: GoBackButtonProps) => {
             size="large"
             onClick={handleGoBack}
             style={styles.button}>
-            {fromFavourites ? sharedCons.GO_BACK_TO_FAVOURITES : sharedCons.GO_BACK_TO_LIST}
+            {t('details.goBack')}
         </Button>
     );
 };

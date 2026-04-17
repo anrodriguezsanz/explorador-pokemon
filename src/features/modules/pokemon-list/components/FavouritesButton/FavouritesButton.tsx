@@ -1,5 +1,6 @@
 import { Button, Badge } from "antd";
 import { HeartFilled } from "@ant-design/icons";
+import { useTranslation } from "react-i18next";
 import { styles } from "./styles.favourites.button";
 import { useNavigate } from "react-router-dom";
 import { useAtom } from "jotai";
@@ -7,6 +8,7 @@ import { favouritesPageAtom, favouritesAtom } from "../../../../../shared/utils/
 import sharedCons from "../../../../../shared/constants/shared.constants";
 
 export const FavouritesButton = () => {
+    const { t } = useTranslation();
     const navigate = useNavigate();
     const [, setCurrentPage] = useAtom(favouritesPageAtom);
     const [favourites] = useAtom(favouritesAtom);
@@ -25,7 +27,7 @@ export const FavouritesButton = () => {
                 icon={<HeartFilled />}
                 style={styles.button}
                 onClick={handleFavouritesClick}>
-                Favoritos
+                {t('list.favourites')}
             </Button>
         </Badge>
     );

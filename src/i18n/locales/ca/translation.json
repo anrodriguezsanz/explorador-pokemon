@@ -1,0 +1,56 @@
+{
+  "navbar": {
+    "title": "Poképedia"
+  },
+  "list": {
+    "searchPlaceholder": "Cercar per nom...",
+    "filterByType": "Filtrar per tipus",
+    "favourites": "Favorits",
+    "notFound": "Pokémon no trobat",
+    "notFoundSubtitle": "El Pokémon que cerques no existeix"
+  },
+  "favourites": {
+    "title": "Favorits",
+    "empty": "No tens Pokémon favorits"
+  },
+  "details": {
+    "height": "Alçada",
+    "weight": "Pes",
+    "stats": "Estadístiques",
+    "noImage": "Imatge no disponible",
+    "goBack": "Tornar",
+    "listenToCry": "Escoltar crit",
+    "playing": "Reproduint..."
+  },
+  "stats": {
+    "hp": "PS",
+    "attack": "Atac",
+    "defense": "Defensa",
+    "special-attack": "Atac Especial",
+    "special-defense": "Defensa Especial",
+    "speed": "Velocitat"
+  },
+  "common": {
+    "noSprite": "No hi ha sprites disponibles per aquest Pokémon"
+  },
+  "types": {
+    "normal": "Normal",
+    "fighting": "Lluita",
+    "flying": "Volador",
+    "poison": "Verí",
+    "ground": "Terra",
+    "rock": "Roca",
+    "bug": "Bitxo",
+    "ghost": "Fantasma",
+    "steel": "Acer",
+    "fire": "Foc",
+    "water": "Aigua",
+    "grass": "Planta",
+    "electric": "Elèctric",
+    "psychic": "Psíquic",
+    "ice": "Gel",
+    "dragon": "Drac",
+    "dark": "Sinistre",
+    "fairy": "Fada"
+  }
+}

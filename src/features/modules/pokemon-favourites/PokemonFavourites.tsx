@@ -1,4 +1,5 @@
 import { Pagination, Typography } from 'antd';
+import { useTranslation } from 'react-i18next';
 import { sharedStyles } from '../../../shared/styles/shared.styles';
 import { styles } from './styles.favourites';
 import { Navbar } from '../../../shared/components/Navbar/Navbar';
@@ -10,7 +11,7 @@ import sharedCons from '../../../shared/constants/shared.constants';
 const { Title } = Typography;
 
 export const PokemonFavourites = () => {
-
+    const { t } = useTranslation();
     const { favourites, totalCount, currentPage, setCurrentPage } = usePokemonFavourites();
 
     return (
@@ -21,13 +22,13 @@ export const PokemonFavourites = () => {
                     <GoBackButton />
                     <div style={styles.titleContainer}>
                         <Title level={1} style={styles.title}>
-                            Favoritos
+                            {t('favourites.title')}
                         </Title>
                     </div>
                 </div>
                 {!favourites.length ? (
                     <div style={styles.emptyStateContainer}>
-                        <Title level={4} style={styles.emptyState}>Todavía no tienes favoritos</Title>
+                        <Title level={4} style={styles.emptyState}>{t('favourites.empty')}</Title>
                         <img 
                             src={`${sharedCons.SPRITE_URL}25.png`}
                             alt="Pikachu"
