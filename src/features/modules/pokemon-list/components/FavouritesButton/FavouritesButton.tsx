@@ -17,7 +17,7 @@ export const FavouritesButton = () => {
     };
 
     return (
-        <Badge count={favourites.length} showZero offset={[-5, 5]} color="#D32B2B">
+        <Badge count={favourites.length} offset={[-5, 5]} color="#D32B2B">
             <Button 
                 type="primary" 
                 variant="solid" 

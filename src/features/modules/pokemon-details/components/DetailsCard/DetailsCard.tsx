@@ -73,6 +73,7 @@ export const DetailsCard = () => {
                                     success={{ percent: 0 }}
                                     format={() => stat.value}
                                     status="normal"
+                                    strokeColor="#FECA1B"
                                 />
                             </div>
                         ))}
