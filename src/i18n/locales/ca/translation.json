@@ -7,7 +7,8 @@
     "filterByType": "Filtrar per tipus",
     "favourites": "Favorits",
     "notFound": "Pokémon no trobat",
-    "notFoundSubtitle": "El Pokémon que cerques no existeix"
+    "notFoundSubtitle": "El Pokémon que cerques no existeix",
+    "noSprite": "No hi ha sprites disponibles per aquest Pokémon"
   },
   "favourites": {
     "title": "Favorits",
@@ -16,7 +17,7 @@
   "details": {
     "height": "Alçada",
     "weight": "Pes",
-    "stats": "Estadístiques",
+    "stats": "Stats",
     "noImage": "Imatge no disponible",
     "goBack": "Tornar",
     "listenToCry": "Escoltar crit",
@@ -29,9 +30,6 @@
     "special-attack": "Atac Especial",
     "special-defense": "Defensa Especial",
     "speed": "Velocitat"
-  },
-  "common": {
-    "noSprite": "No hi ha sprites disponibles per aquest Pokémon"
   },
   "types": {
     "normal": "Normal",

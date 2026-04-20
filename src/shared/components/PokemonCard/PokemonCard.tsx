@@ -31,7 +31,7 @@ export const PokemonCard = ({ pokemon, from }: PokemonCardProps) => {
               {/* Check if sprite is available. If not, renders a message */}
               {pokemon.sprite === '' || imageError ? (
                 <div style={styles.noSpriteSpan}>
-                  <span>{t('common.noSprite')}</span>
+                  <span style={styles.noSpriteText}>{t('list.noSprite')}</span>
                 </div>
               ) : (
                 <img

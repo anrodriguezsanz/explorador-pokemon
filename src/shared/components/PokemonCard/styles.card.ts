@@ -25,9 +25,18 @@ export const styles = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    height: '100%',
-    margin: '20px 70px 0 30px',
+    height: 120,
+    padding: '0 50px',
     fontWeight: 'bold',
-    color: '#3760A7'
+    color: '#1890ff',
+    textAlign: 'center',
+    maxWidth: '100%',
+    boxSizing: 'border-box'
+  } as CSSProperties,
+
+  noSpriteText: {
+    display: 'block',
+    width: '100%',
+    wordWrap: 'break-word'
   } as CSSProperties
 };

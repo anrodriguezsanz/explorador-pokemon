@@ -5,6 +5,8 @@ import { Navbar } from '../../../shared/components/Navbar/Navbar';
 import { DetailsCard } from './components/DetailsCard/DetailsCard';
 import { NotFoundResult } from '../../../shared/components/NotFoundResult/NotFoundResult';
 import { GoBackButton } from '../../../shared/components/GoBackButton/GoBackButton';
+import { LeftButton } from '../../../shared/components/LeftButton/LeftButton';
+import { RightButton } from '../../../shared/components/RightButton/RightButton';
 
 export const PokemonDetails = () => {
   const { pokemon, isLoading } = usePokemonDetails();
@@ -24,7 +26,9 @@ export const PokemonDetails = () => {
           <>
             <DetailsCard />
             <div style={styles.buttonContainer}>
+              <LeftButton />
               <GoBackButton />
+              <RightButton />
             </div>
           </>
         )}

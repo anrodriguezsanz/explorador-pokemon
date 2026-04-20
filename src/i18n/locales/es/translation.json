@@ -7,7 +7,8 @@
     "filterByType": "Filtrar por tipo",
     "favourites": "Favoritos",
     "notFound": "Pokémon no encontrado",
-    "notFoundSubtitle": "El Pokémon que buscas no existe"
+    "notFoundSubtitle": "El Pokémon que buscas no existe",
+    "noSprite": "No hay sprites disponibles para este Pokémon"
   },
   "favourites": {
     "title": "Favoritos",
@@ -29,9 +30,6 @@
     "special-attack": "Ataque Especial",
     "special-defense": "Defensa Especial",
     "speed": "Velocidad"
-  },
-  "common": {
-    "noSprite": "No hay sprites disponibles para este Pokémon"
   },
   "types": {
     "normal": "Normal",

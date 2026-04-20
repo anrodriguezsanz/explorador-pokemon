@@ -14,6 +14,9 @@ export const styles = {
 
   buttonContainer: {
     marginTop: 20,
-    textAlign: 'center'
+    textAlign: 'center',
+    display: 'flex',
+    justifyContent: 'center',
+    gap: 10
   } as CSSProperties
 };

@@ -8,6 +8,7 @@ import { Navbar } from '../../../shared/components/Navbar/Navbar';
 import { usePokemonTypes } from './hooks/usePokemonType';
 import { NotFoundResult } from '../../../shared/components/NotFoundResult/NotFoundResult';
 import { FavouritesButton } from './components/FavouritesButton/FavouritesButton';
+import { OrderingButton } from './components/OrderingButton/OrderingButton';
 
 const { Search } = Input;
 
@@ -55,6 +56,7 @@ export const PokemonList = () => {
                 value: type
               }))}
             />
+            <OrderingButton />
           </div>
         </div>
 

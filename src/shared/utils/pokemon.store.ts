@@ -16,3 +16,9 @@ export const favouritesPageAtom = atom<number>(1);
 
 // Atom to persist favourites in localStorage
 export const favouritesAtom = atomWithStorage<PokemonItem[]>('favourites', []);
+
+// Type for sort order
+export type SortOrder = 'asc' | 'desc' | null;
+
+// Atom to persist sorting
+export const sortAtom = atomWithStorage<SortOrder>('pokemon-sort-order', null);
