@@ -11,6 +11,9 @@ Aplicación web para explorar la [PokéAPI](https://pokeapi.co/). Construida con
 - **Gestión de favoritos** 
 - **Reproducción de cry del Pokémon** 
 - **Paginación** 
+- **Ordenamiento alfabético**
+- **Internacionalización (i18n)**
+- **Navegación entre Pokémon**
 - **Diseño responsive** 
 
 ---
@@ -24,6 +27,7 @@ Aplicación web para explorar la [PokéAPI](https://pokeapi.co/). Construida con
 - **React Router DOM 7**
 - **Jotai 2**
 - **Axios 1**
+- **i18next**
 - **PokéAPI**
 
 ---
@@ -32,13 +36,15 @@ Aplicación web para explorar la [PokéAPI](https://pokeapi.co/). Construida con
 
 ### Lista de Pokémon
 - Visualización en grid
-- Búsqueda por nombre en tiempo real
+- Búsqueda por nombre en tiempo real con debounce
 - Filtrado por tipo
+- Ordenamiento alfabético (A-Z / Z-A / Sin ordenar)
 - Paginación de 20 elementos
 - Botón de favoritos en cada tarjeta
 
 ### Detalles de Pokémon
 - Imagen oficial HQ
+- Navegación entre Pokémon con botones anterior/siguiente
 - Información básica (altura, peso)
 - Tipos del Pokémon
 - Estadísticas base con barras de progreso
@@ -47,9 +53,15 @@ Aplicación web para explorar la [PokéAPI](https://pokeapi.co/). Construida con
 
 ### Favoritos
 - Lista de Pokémon guardados
-- Persistencia en estado global (Jotai)
+- Persistencia en localStorage con Jotai
 - Paginación
 - Estado vacío con mensaje y sprite de Pikachu
+
+### Internacionalización
+- Soporte para 3 idiomas: Español, Inglés y Catalán
+- Selector de idioma en navbar
+- Persistencia del idioma seleccionado
+- Traducciones completas de la interfaz
 
 ---
 
