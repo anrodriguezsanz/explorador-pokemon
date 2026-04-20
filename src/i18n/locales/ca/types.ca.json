@@ -1,0 +1,20 @@
+{
+    "normal": "Normal",
+    "fighting": "Lluita",
+    "flying": "Volador",
+    "poison": "Verí",
+    "ground": "Terra",
+    "rock": "Roca",
+    "bug": "Bitxo",
+    "ghost": "Fantasma",
+    "steel": "Acer",
+    "fire": "Foc",
+    "water": "Aigua",
+    "grass": "Planta",
+    "electric": "Elèctric",
+    "psychic": "Psíquic",
+    "ice": "Gel",
+    "dragon": "Drac",
+    "dark": "Sinistre",
+    "fairy": "Fada"
+  }

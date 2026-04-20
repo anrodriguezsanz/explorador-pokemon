@@ -1,0 +1,8 @@
+{
+    "searchPlaceholder": "Cercar per nom...",
+    "filterByType": "Filtrar per tipus",
+    "favourites": "Favorits",
+    "notFound": "Pokémon no trobat",
+    "notFoundSubtitle": "El Pokémon que cerques no existeix",
+    "noSprite": "No hi ha sprites disponibles per aquest Pokémon"
+  }
