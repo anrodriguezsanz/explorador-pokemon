@@ -1,4 +1,5 @@
 import { Card, Col, Row, Typography, Tag, Progress } from 'antd';
+import { FileImageOutlined } from '@ant-design/icons';
 import { useTranslation } from 'react-i18next';
 import { usePokemonDetails } from '../../hooks/usePokemonDetails';
 import { cardStyles as styles } from './styles.detail';
@@ -34,6 +35,7 @@ export const DetailsCard = () => {
                     <Col xs={24} md={10} style={styles.imageContainer}>
                         {!pokemon.image || imageError ? (
                             <div style={styles.noImageSpan}>
+                                <FileImageOutlined style={styles.noImageIcon} />
                                 <span>{t('details.noImage')}</span>
                             </div>
                         ) : (

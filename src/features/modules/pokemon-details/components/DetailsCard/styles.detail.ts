@@ -46,6 +46,7 @@ export const cardStyles = {
 
   noImageSpan: {
     display: 'flex',
+    flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
     minHeight: 200,
@@ -55,5 +56,10 @@ export const cardStyles = {
     color: '#6b7280',
     textAlign: 'center',
     lineHeight: '1.5'
+  } as CSSProperties,
+
+  noImageIcon: {
+    fontSize: '48px',
+    marginBottom: '12px'
   } as CSSProperties
 };

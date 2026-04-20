@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import type { PokemonItem } from '../../../features/modules/pokemon-list/models/PokemonList';
 import { Card } from 'antd';
+import { FileImageOutlined } from '@ant-design/icons';
 import { styles } from './styles.card';
 import { Link } from 'react-router-dom';
 import { HeartButton } from '../HeartButton/HeartButton';
@@ -31,6 +32,7 @@ export const PokemonCard = ({ pokemon, from }: PokemonCardProps) => {
               {/* Check if sprite is available. If not, renders a message */}
               {pokemon.sprite === '' || imageError ? (
                 <div style={styles.noSpriteSpan}>
+                  <FileImageOutlined style={styles.noSpriteIcon} />
                   <span style={styles.noSpriteText}>{t('list.noSprite')}</span>
                 </div>
               ) : (

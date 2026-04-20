@@ -23,6 +23,7 @@ export const styles = {
 
   noSpriteSpan: {
     display: 'flex',
+    flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
     height: 120,
@@ -40,5 +41,10 @@ export const styles = {
     display: 'block',
     width: '100%',
     wordWrap: 'break-word'
+  } as CSSProperties,
+
+  noSpriteIcon: {
+    fontSize: '32px',
+    marginBottom: '8px'
   } as CSSProperties
 };
