@@ -19,7 +19,7 @@ export const RightButton = () => {
     };
 
     const currentId = Number(id);
-    const isLastPokemon = currentId >= sharedCons.TOTAL_POKEMON;
+    const isLastPokemon = currentId === sharedCons.TOTAL_POKEMON;
 
     return (
         <Button

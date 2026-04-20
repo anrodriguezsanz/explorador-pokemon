@@ -48,9 +48,12 @@ export const cardStyles = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    height: '100%',
-    margin: '20px 70px 0 30px',
-    fontWeight: 'bold',
-    color: '#3760A7'
+    minHeight: 200,
+    padding: '40px 30px',
+    fontSize: '14px',
+    fontWeight: 500,
+    color: '#6b7280',
+    textAlign: 'center',
+    lineHeight: '1.5'
   } as CSSProperties
 };

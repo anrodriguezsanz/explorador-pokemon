@@ -26,12 +26,14 @@ export const styles = {
     justifyContent: 'center',
     alignItems: 'center',
     height: 120,
-    padding: '0 50px',
-    fontWeight: 'bold',
-    color: '#1890ff',
+    padding: '0 30px',
+    fontSize: '14px',
+    fontWeight: 500,
+    color: '#6b7280',
     textAlign: 'center',
     maxWidth: '100%',
-    boxSizing: 'border-box'
+    boxSizing: 'border-box',
+    lineHeight: '1.5'
   } as CSSProperties,
 
   noSpriteText: {

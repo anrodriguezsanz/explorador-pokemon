@@ -7,6 +7,7 @@ import { CryButton } from '../CryButton/CryButton';
 import { useState } from 'react';
 import type { BasePokemon } from '../../../../../shared/models/Pokemon';
 import sharedCons from '../../../../../shared/constants/shared.constants';
+import { useTypeNavigation } from '../../../../../shared/hooks/useTypeNavigation';
 
 const { Title, Text } = Typography;
 
@@ -14,6 +15,7 @@ export const DetailsCard = () => {
     const { t } = useTranslation();
     const { pokemon } = usePokemonDetails();
     const [imageError, setImageError] = useState(false);
+    const { navigateToType } = useTypeNavigation();
 
     if (!pokemon) return null;
 
@@ -42,10 +44,17 @@ export const DetailsCard = () => {
                                 onError={() => setImageError(true)} 
                             />
                         )}
-                        {/* Maps The types array and renders a Tag for each type */}
+                        {/* Maps The types array and renders a clickable Tag for each type */}
                         <div style={styles.typesContainer}>
                             {pokemon.types.map(type => (
-                                <Tag key={type} color="blue" style={styles.typeTag}>{t(`types.${type}`)}</Tag>
+                                <Tag 
+                                    key={type} 
+                                    color="blue" 
+                                    style={{ ...styles.typeTag, cursor: 'pointer' }}
+                                    onClick={() => navigateToType(type)}
+                                >
+                                    {t(`types.${type}`)}
+                                </Tag>
                             ))}
                         </div>
                         <CryButton pokemonId={pokemon.id} />

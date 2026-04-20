@@ -46,7 +46,7 @@ Aplicación web para explorar la [PokéAPI](https://pokeapi.co/). Construida con
 - Imagen oficial HQ
 - Navegación entre Pokémon con botones anterior/siguiente
 - Información básica (altura, peso)
-- Tipos del Pokémon
+- Tipos del Pokémon clickeables (navega a la lista filtrada por tipo)
 - Estadísticas base con barras de progreso
 - Botón para reproducir el cry del Pokémon
 - Botón para añadir/quitar de favoritos
