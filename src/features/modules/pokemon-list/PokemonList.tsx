@@ -1,12 +1,12 @@
 import { Pagination, Spin, Select, Input } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { usePokemonList } from './hooks/usePokemonList';
-import { PokemonListContainer } from '../../../shared/components/PokemonListContainer/PokemonListContainer';
+import { PokemonListContainer } from '@/shared/components/PokemonListContainer/PokemonListContainer';
 import { styles } from './styles/styles.list';
-import { sharedStyles } from '../../../shared/styles/shared.styles';
-import { Navbar } from '../../../shared/components/Navbar/Navbar';
+import { sharedStyles } from '@/shared/styles/shared.styles';
+import { Navbar } from '@/shared/components/Navbar/Navbar';
 import { usePokemonTypes } from './hooks/usePokemonType';
-import { NotFoundResult } from '../../../shared/components/NotFoundResult/NotFoundResult';
+import { NotFoundResult } from '@/shared/components/NotFoundResult/NotFoundResult';
 import { FavouritesButton } from './components/FavouritesButton/FavouritesButton';
 import { OrderingButton } from './components/OrderingButton/OrderingButton';
 

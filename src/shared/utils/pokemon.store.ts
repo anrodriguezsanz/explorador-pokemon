@@ -1,6 +1,6 @@
 import { atom } from 'jotai';
 import { atomWithStorage } from 'jotai/utils';
-import type { PokemonItem } from '../../features/modules/pokemon-list/models/PokemonList';
+import type { PokemonItem } from '@/pokemon-list/models/PokemonList';
 
 // Atom to store the selected type
 export const selectedTypeAtom = atom<string>('');

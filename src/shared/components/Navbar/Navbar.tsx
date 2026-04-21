@@ -4,7 +4,7 @@ import { useAtom } from "jotai";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { currentPageAtom } from "../../utils/pokemon.store";
-import { usePokemonList } from "../../../features/modules/pokemon-list/hooks/usePokemonList";
+import { usePokemonList } from "@/pokemon-list/hooks/usePokemonList";
 import { LanguageSelector } from "../LanguageSelector/LanguageSelector";
 import sharedCons from "../../constants/shared.constants";
 

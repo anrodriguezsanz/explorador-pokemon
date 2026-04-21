@@ -1,4 +1,4 @@
-import type { BasePokemon } from '../../../../shared/models/Pokemon';
+import type { BasePokemon } from '@/shared/models/Pokemon';
 
 // --- POKEMON ---
 

@@ -1,12 +1,12 @@
 import { Spin } from 'antd';
-import { usePokemonDetails } from '../pokemon-details/hooks/usePokemonDetails';
+import { usePokemonDetails } from './hooks/usePokemonDetails';
 import { styles } from './styles/details.styles';
-import { Navbar } from '../../../shared/components/Navbar/Navbar';
+import { Navbar } from '@/shared/components/Navbar/Navbar';
 import { DetailsCard } from './components/DetailsCard/DetailsCard';
-import { NotFoundResult } from '../../../shared/components/NotFoundResult/NotFoundResult';
-import { GoBackButton } from '../../../shared/components/GoBackButton/GoBackButton';
-import { LeftButton } from '../../../shared/components/LeftButton/LeftButton';
-import { RightButton } from '../../../shared/components/RightButton/RightButton';
+import { NotFoundResult } from '@/shared/components/NotFoundResult/NotFoundResult';
+import { GoBackButton } from '@/shared/components/GoBackButton/GoBackButton';
+import { LeftButton } from '@/shared/components/LeftButton/LeftButton';
+import { RightButton } from '@/shared/components/RightButton/RightButton';
 
 export const PokemonDetails = () => {
   const { pokemon, isLoading } = usePokemonDetails();

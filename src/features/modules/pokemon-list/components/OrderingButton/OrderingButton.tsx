@@ -1,7 +1,7 @@
 import { Button } from "antd";
 import { SortAscendingOutlined, SortDescendingOutlined } from "@ant-design/icons";
 import { useAtom } from "jotai";
-import { sortAtom } from "../../../../../shared/utils/pokemon.store";
+import { sortAtom } from "@/shared/utils/pokemon.store";
 import { orderingStyles } from "./styles.ordering";
 
 export const OrderingButton = () => {

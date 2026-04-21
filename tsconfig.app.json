@@ -19,7 +19,16 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "erasableSyntaxOnly": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+
+    /* Path Mapping */
+    "baseUrl": ".",
+    "paths": {
+      "@/pokemon-list/*": ["src/features/modules/pokemon-list/*"],
+      "@/pokemon-details/*": ["src/features/modules/pokemon-details/*"],
+      "@/pokemon-favorites/*": ["src/features/modules/pokemon-favorites/*"],
+      "@/shared/*": ["src/shared/*"]
+    }
   },
   "include": ["src"]
 }

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import type { PokemonItem } from '../../../features/modules/pokemon-list/models/PokemonList';
+import type { PokemonItem } from '@/pokemon-list/models/PokemonList';
 import { Card } from 'antd';
 import { FileImageOutlined } from '@ant-design/icons';
 import { styles } from './styles.card';

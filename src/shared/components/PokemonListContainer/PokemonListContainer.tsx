@@ -1,7 +1,7 @@
 import { Row, Col } from "antd";
 import { sharedStyles } from "../../styles/shared.styles";
 import { PokemonCard } from "../PokemonCard/PokemonCard";
-import type { PokemonItem } from "../../../features/modules/pokemon-list/models/PokemonList";
+import type { PokemonItem } from "@/pokemon-list/models/PokemonList";
 
 interface PokemonListContainerProps {
     pokemons: PokemonItem[];

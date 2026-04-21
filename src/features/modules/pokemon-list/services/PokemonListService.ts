@@ -1,6 +1,6 @@
 import { pokeApi } from "../../../../core/http/pokeApi";
 import type { APIPokemonListResponse, PokemonItem, PokemonPaginatedList } from "../models/PokemonList";
-import sharedCons from "../../../../shared/constants/shared.constants";
+import sharedCons from "@/shared/constants/shared.constants";
 
 export const PokemonListService = {
 

@@ -1,6 +1,6 @@
 import { useAtom, useAtomValue } from 'jotai';
-import { selectedTypeAtom, searchQueryAtom, currentPageAtom, sortAtom } from '../../../../shared/utils/pokemon.store';
-import { useDebounce } from '../../../../shared/hooks/useDebounce';
+import { selectedTypeAtom, searchQueryAtom, currentPageAtom, sortAtom } from '@/shared/utils/pokemon.store';
+import { useDebounce } from '@/shared/hooks/useDebounce';
 
 export const usePokemonFilters = () => {
     const [searchQuery, setSearchQuery] = useAtom(searchQueryAtom);

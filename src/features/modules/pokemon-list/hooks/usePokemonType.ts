@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useAtom } from 'jotai';
-import { selectedTypeAtom } from '../../../../shared/utils/pokemon.store';
+import { selectedTypeAtom } from '@/shared/utils/pokemon.store';
 import { PokemonTypeService } from '../services/PokemonTypeService';
 import listCons from '../constants/list.constants';
 

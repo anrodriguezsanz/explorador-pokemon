@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { PokemonListService } from '../services/PokemonListService';
 import { PokemonTypeService } from '../services/PokemonTypeService';
 import type { PokemonItem } from '../models/PokemonList';
-import sharedCons from '../../../../shared/constants/shared.constants';
+import sharedCons from '@/shared/constants/shared.constants';
 import listCons from '../constants/list.constants';
 
 interface UsePokemonDataProps {

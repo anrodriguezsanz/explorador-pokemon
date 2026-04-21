@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { usePokemonFilters } from './usePokemonFilters';
 import { usePokemonData } from './usePokemonData';
-import sharedCons from '../../../../shared/constants/shared.constants';
+import sharedCons from '@/shared/constants/shared.constants';
 
 export const usePokemonList = () => {
     const filters = usePokemonFilters();

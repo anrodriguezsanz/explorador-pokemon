@@ -3,12 +3,12 @@ import { FileImageOutlined } from '@ant-design/icons';
 import { useTranslation } from 'react-i18next';
 import { usePokemonDetails } from '../../hooks/usePokemonDetails';
 import { cardStyles as styles } from './styles.detail';
-import { HeartButton } from '../../../../../shared/components/HeartButton/HeartButton';
+import { HeartButton } from '@/shared/components/HeartButton/HeartButton';
 import { CryButton } from '../CryButton/CryButton';
 import { useState } from 'react';
-import type { BasePokemon } from '../../../../../shared/models/Pokemon';
-import sharedCons from '../../../../../shared/constants/shared.constants';
-import { useTypeNavigation } from '../../../../../shared/hooks/useTypeNavigation';
+import type { BasePokemon } from '@/shared/models/Pokemon';
+import sharedCons from '@/shared/constants/shared.constants';
+import { useTypeNavigation } from '@/shared/hooks/useTypeNavigation';
 
 const { Title, Text } = Typography;
 

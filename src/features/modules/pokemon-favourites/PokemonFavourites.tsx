@@ -1,12 +1,12 @@
 import { Pagination, Typography } from 'antd';
 import { useTranslation } from 'react-i18next';
-import { sharedStyles } from '../../../shared/styles/shared.styles';
+import { sharedStyles } from '@/shared/styles/shared.styles';
 import { styles } from './styles.favourites';
-import { Navbar } from '../../../shared/components/Navbar/Navbar';
-import { PokemonListContainer } from '../../../shared/components/PokemonListContainer/PokemonListContainer';
-import { GoBackButton } from '../../../shared/components/GoBackButton/GoBackButton';
-import { usePokemonFavourites } from '../../../shared/hooks/usePokemonFavourites';
-import sharedCons from '../../../shared/constants/shared.constants';
+import { Navbar } from '@/shared/components/Navbar/Navbar';
+import { PokemonListContainer } from '@/shared/components/PokemonListContainer/PokemonListContainer';
+import { GoBackButton } from '@/shared/components/GoBackButton/GoBackButton';
+import { usePokemonFavourites } from '@/shared/hooks/usePokemonFavourites';
+import sharedCons from '@/shared/constants/shared.constants';
 
 const { Title } = Typography;
 
