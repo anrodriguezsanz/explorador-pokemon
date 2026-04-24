@@ -5,7 +5,7 @@ import { FavouritesPage } from '../features/pages/favourites';
 
 export const AppRouter = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/explorador-pokemon">
       <Routes>
         <Route path="/" element={<PokemonListPage />} />
 
